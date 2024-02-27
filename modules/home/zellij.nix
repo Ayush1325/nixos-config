@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.zellij = {
@@ -9,4 +9,8 @@
       default_layout = "compact";
     };
   };
+
+	home.packages = with pkgs; [
+		wl-clipboard
+	];
 }

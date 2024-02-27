@@ -5,6 +5,7 @@
     [
       ./modules/home/zellij.nix
       ./modules/home/zsh.nix
+      ./modules/home/neovim/neovim.nix
     ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -41,7 +42,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     wget
-    neovim
     brave
     zellij
     nerdfonts
