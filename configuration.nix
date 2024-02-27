@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      ./modules/system/audio.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
