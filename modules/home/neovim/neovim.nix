@@ -4,7 +4,7 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    extraLuaConfig = "\n${builtins.readFile ./base.lua}\n";
+    extraLuaConfig = "\n${builtins.readFile ./base.lua}\n${builtins.readFile ./lsp.lua}\n";
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
       nvim-treesitter
@@ -64,6 +64,36 @@
         type = "lua";
 				config = "${builtins.readFile ./cmp.lua}";
 			}
+			nvim-lspconfig
+			nlsp-settings-nvim
+			{
+				plugin = gitsigns-nvim;
+        type = "lua";
+        config = "require('gitsigns').setup({})";
+			}
+			rust-tools-nvim
+			{
+				plugin = neodev-nvim;
+        type = "lua";
+        config = "require('neodev').setup({})";
+			}
+			clangd_extensions-nvim
+			{
+				plugin = nvim-treesitter-context;
+				type = "lua";
+				config = "require('treesitter-context').setup({})";
+			}
+			copilot-lua
+			{
+				plugin = which-key-nvim;
+        type = "lua";
+				config = "${builtins.readFile ./keys.lua}";
+			}
+			nvim-web-devicons
     ];
+		extraPackages = with pkgs; [
+			nixd
+			lua-language-server
+		];
   };
 }
