@@ -14,55 +14,74 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/1f4286f3-884d-4ce0-b8b3-a6246fb05c64";
-      fsType = "btrfs";
-      options = [ "subvol=@" "compress=zstd" "noatime" ];
-    };
-
   boot.initrd.luks.devices."luks-1d78d62b-3fac-4774-a9aa-d50decd365b6".device = "/dev/disk/by-uuid/1d78d62b-3fac-4774-a9aa-d50decd365b6";
 
-  fileSystems."/home" =
-    {
+  # Primary SSD
+  fileSystems = {
+    "/" = {
       device = "/dev/disk/by-uuid/1f4286f3-884d-4ce0-b8b3-a6246fb05c64";
       fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" "noatime" ];
+      options = [ "subvol=@" "compress=zstd" "noatime" "defaults" "ssd" ];
     };
-
-  fileSystems."/nix" =
-    {
+    "/home" = {
       device = "/dev/disk/by-uuid/1f4286f3-884d-4ce0-b8b3-a6246fb05c64";
       fsType = "btrfs";
-      options = [ "subvol=@nix" "compress=zstd" "noatime" ];
+      options = [ "subvol=@home" "compress=zstd" "noatime" "defaults" "ssd" ];
     };
-
-  fileSystems."/persist" =
-    {
+    "/nix" = {
       device = "/dev/disk/by-uuid/1f4286f3-884d-4ce0-b8b3-a6246fb05c64";
       fsType = "btrfs";
-      options = [ "subvol=@persist" "compress=zstd" "noatime" ];
+      options = [ "subvol=@nix" "compress=zstd" "noatime" "defaults" "ssd" ];
     };
-
-  fileSystems."/var/log" =
-    {
+    "/persist" = {
       device = "/dev/disk/by-uuid/1f4286f3-884d-4ce0-b8b3-a6246fb05c64";
       fsType = "btrfs";
-      options = [ "subvol=@log" "compress=zstd" "noatime" ];
+      options = [ "subvol=@persist" "compress=zstd" "noatime" "defaults" "ssd" ];
     };
-
-  fileSystems."/swap" =
-    {
+    "/var/log" = {
+      device = "/dev/disk/by-uuid/1f4286f3-884d-4ce0-b8b3-a6246fb05c64";
+      fsType = "btrfs";
+      options = [ "subvol=@log" "compress=zstd" "noatime" "defaults" "ssd" ];
+    };
+    "/swap" = {
       device = "/dev/disk/by-uuid/1f4286f3-884d-4ce0-b8b3-a6246fb05c64";
       fsType = "btrfs";
       options = [ "subvol=@swap" ];
     };
-
-  fileSystems."/boot" =
-    {
+    "/boot" = {
       device = "/dev/disk/by-uuid/4326-687E";
       fsType = "vfat";
     };
+  };
+
+  # Secondary SSD
+  fileSystems = {
+    "/home/ayush/Documents/Programming" = {
+      device = "/dev/disk/by-uuid/33cfe877-81a9-4aa4-8376-a0b6f62f5c50";
+      fsType = "btrfs";
+      options = [ "subvol=@programming" "defaults" "compress=zstd" "noatime" "ssd" "nofail" ];
+    };
+    "/home/ayush/Documents/University" = {
+      device = "/dev/disk/by-uuid/33cfe877-81a9-4aa4-8376-a0b6f62f5c50";
+      fsType = "btrfs";
+      options = [ "subvol=@university" "defaults" "compress=zstd" "noatime" "ssd" "nofail" ];
+    };
+    "/home/ayush/Games" = {
+      device = "/dev/disk/by-uuid/33cfe877-81a9-4aa4-8376-a0b6f62f5c50";
+      fsType = "btrfs";
+      options = [ "subvol=@games" "defaults" "compress=zstd" "noatime" "ssd" "nofail" ];
+    };
+    "/home/ayush/Videos/Movies" = {
+      device = "/dev/disk/by-uuid/33cfe877-81a9-4aa4-8376-a0b6f62f5c50";
+      fsType = "btrfs";
+      options = [ "subvol=@media/movies" "defaults" "compress=zstd" "noatime" "ssd" "nofail" ];
+    };
+    "/home/ayush/Videos/Series" = {
+      device = "/dev/disk/by-uuid/33cfe877-81a9-4aa4-8376-a0b6f62f5c50";
+      fsType = "btrfs";
+      options = [ "subvol=@media/series" "defaults" "compress=zstd" "noatime" "ssd" "nofail" ];
+    };
+  };
 
   swapDevices = [{
     device = "/swap/swapfile";
