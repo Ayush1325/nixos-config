@@ -6,6 +6,7 @@
       ./modules/home/zellij.nix
       ./modules/home/zsh.nix
       ./modules/home/neovim/neovim.nix
+      ./modules/home/brave.nix
     ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -42,7 +43,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     wget
-    brave
     zellij
     nerdfonts
   ];

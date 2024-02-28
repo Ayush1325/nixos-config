@@ -21,6 +21,7 @@
 				nativeBuidInputs = with pkgs; [
 					nixd
 					lua-language-server
+					nixpkgs-fmt
 				];
 			};
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
