@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ./modules/system/audio.nix
+      ./modules/system/gnome.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -25,10 +26,7 @@
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
-  # Gnome
-  services.xserver.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
+  # Gnupg
   programs.gnupg.agent.enable = true;
 
   # Configure network proxy if necessary
@@ -49,10 +47,6 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-
-  # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -81,12 +75,7 @@
   ];
 
   # Env variables
-  environment.variables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-  };
-
-  # Graphics
+  environment.variables = { };
 
   # OpenGL
   hardware.opengl = {
@@ -167,6 +156,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
-
