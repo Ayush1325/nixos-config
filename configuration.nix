@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ./modules/system/audio.nix
@@ -19,7 +20,7 @@
   networking.hostName = "ayush"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -108,7 +109,7 @@
     prime = {
       offload = {
         enable = true;
-	enableOffloadCmd = true;
+        enableOffloadCmd = true;
       };
       amdgpuBusId = "PCI:7:0:0";
       nvidiaBusId = "PCI:1:0:0";
