@@ -9,6 +9,10 @@
     enableCompletion = true;
     initExtra = "[[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}";
 
+    history = {
+      share = false;
+    };
+
     plugins = [
       {
         name = "powerlevel10k";
