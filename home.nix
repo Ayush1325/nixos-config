@@ -7,6 +7,7 @@
       ./modules/home/zsh.nix
       ./modules/home/neovim/neovim.nix
       ./modules/home/brave.nix
+      ./modules/home/mangohud.nix
     ];
 
   # Home Manager needs a bit of information about you and the paths it should
