@@ -17,7 +17,12 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-    
+			devShells.x86_64-linux.default = pkgs.mkShell {
+				nativeBuidInputs = with pkgs; [
+					nixd
+					lua-language-server
+				];
+			};
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
@@ -25,6 +30,5 @@
             inputs.home-manager.nixosModules.default
           ];
         };
-
     };
 }

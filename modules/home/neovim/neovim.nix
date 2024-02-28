@@ -92,8 +92,6 @@
 			nvim-web-devicons
     ];
 		extraPackages = with pkgs; [
-			nixd
-			lua-language-server
 		];
   };
 }
