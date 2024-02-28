@@ -12,6 +12,7 @@
       inputs.home-manager.nixosModules.default
       ./modules/system/audio.nix
       ./modules/system/gnome.nix
+      ./modules/system/steam.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
