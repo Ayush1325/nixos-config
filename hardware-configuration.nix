@@ -16,6 +16,11 @@
 
   boot.initrd.luks.devices."luks-1d78d62b-3fac-4774-a9aa-d50decd365b6".device = "/dev/disk/by-uuid/1d78d62b-3fac-4774-a9aa-d50decd365b6";
 
+  # Pretty boot
+  boot.plymouth.enable = true;
+  boot.initrd.systemd.enable = true;
+  boot.kernelParams = [ "quiet" ];
+
   # Primary SSD
   fileSystems = {
     "/" = {
