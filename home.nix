@@ -4,7 +4,7 @@
   imports =
     [
       ./modules/home/zellij.nix
-      ./modules/home/zsh.nix
+      ./modules/home/zsh/zsh.nix
       ./modules/home/neovim/neovim.nix
       ./modules/home/brave.nix
       ./modules/home/mangohud.nix
