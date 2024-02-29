@@ -5,24 +5,30 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ./modules/system/audio.nix
-      ./modules/system/gnome.nix
-      ./modules/system/steam.nix
-      ./modules/system/graphics.nix
-      inputs.sops-nix.nixosModules.sops
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ./modules/system/audio.nix
+    ./modules/system/gnome.nix
+    ./modules/system/steam.nix
+    ./modules/system/graphics.nix
+  ];
 
   sops = {
     defaultSopsFile = ./secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
     age.keyFile = "/home/ayush/.config/sops/age/keys.txt";
-    secrets."mail/college" = {
-      owner = config.users.users.ayush.name;
+    secrets = {
+      "mail/college" = {
+        owner = config.users.users.ayush.name;
+      };
+      "mail/personal" = {
+        owner = config.users.users.ayush.name;
+      };
+      "mail/devel" = {
+        owner = config.users.users.ayush.name;
+      };
     };
   };
 

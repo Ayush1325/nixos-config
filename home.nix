@@ -10,7 +10,8 @@
       ./modules/home/mangohud.nix
       ./modules/home/rclone.nix
       ./modules/home/git.nix
-      # ./modules/home/thunderbird.nix
+      ./modules/home/mail.nix
+      # ./modules/home/joplin.nix
     ];
 
   # Home Manager needs a bit of information about you and the paths it should
