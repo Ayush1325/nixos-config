@@ -14,7 +14,17 @@
       ./modules/system/gnome.nix
       ./modules/system/steam.nix
       ./modules/system/graphics.nix
+      inputs.sops-nix.nixosModules.sops
     ];
+
+  sops = {
+    defaultSopsFile = ./secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "/home/ayush/.config/sops/age/keys.txt";
+    secrets."mail/college" = {
+      owner = config.users.users.ayush.name;
+    };
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
