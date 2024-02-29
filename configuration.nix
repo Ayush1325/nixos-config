@@ -13,6 +13,7 @@
       ./modules/system/audio.nix
       ./modules/system/gnome.nix
       ./modules/system/steam.nix
+      ./modules/system/graphics.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -71,37 +72,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   ];
-
-  # Env variables
-  environment.variables = { };
-
-  # OpenGL
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-    prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-      amdgpuBusId = "PCI:7:0:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-  };
 
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
