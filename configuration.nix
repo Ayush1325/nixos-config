@@ -15,6 +15,8 @@
     ./modules/system/graphics.nix
   ];
 
+  services.fwupd.enable = true;
+
   sops = {
     defaultSopsFile = ./secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
