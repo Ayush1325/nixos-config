@@ -17,6 +17,10 @@
 
   services.fwupd.enable = true;
 
+  # Firewall with nftables
+  networking.firewall.enable = true;
+  networking.nftables.enable = true;
+
   sops = {
     defaultSopsFile = ./secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
