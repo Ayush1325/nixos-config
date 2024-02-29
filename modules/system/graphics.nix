@@ -12,7 +12,9 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = true;
+
+    # Seems to cause weirdness after sleep
+    powerManagement.enable = false;
 
     # Does not seem to work with Ryzen 4000 on Linux but maybe someday?
     powerManagement.finegrained = true;
