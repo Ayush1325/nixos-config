@@ -8,4 +8,5 @@
   environment.systemPackages = with pkgs; [
     gnome.dconf-editor
   ];
+
 }
