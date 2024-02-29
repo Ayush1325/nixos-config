@@ -9,6 +9,8 @@
       ./modules/home/brave.nix
       ./modules/home/mangohud.nix
       ./modules/home/rclone.nix
+      ./modules/home/git.nix
+      # ./modules/home/thunderbird.nix
     ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -85,11 +87,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.git = {
-    enable = true;
-    userEmail = "ayushdevel1325@gmail.com";
-    userName = "Ayush Singh";
-  };
 
   dconf = {
     enable = true;
