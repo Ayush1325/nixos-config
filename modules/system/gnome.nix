@@ -7,6 +7,16 @@
 
   environment.systemPackages = with pkgs; [
     gnome.dconf-editor
+    celluloid
+    fragments
+    gnomeExtensions.caffeine
   ];
 
+  environment.gnome.excludePackages = with pkgs; [
+    gnome.totem
+    gnome.gnome-music
+    gnome.gnome-maps
+    gnome.epiphany
+    xterm
+  ];
 }
