@@ -10,6 +10,7 @@
       ./modules/home/mangohud.nix
       ./modules/home/rclone.nix
       ./modules/home/git.nix
+      ./modules/home/gpg.nix
       # ./modules/home/thunderbird.nix
     ];
 
