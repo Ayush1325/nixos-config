@@ -15,6 +15,8 @@
     ./modules/system/graphics.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   services.fwupd.enable = true;
 
   # Firewall with nftables
@@ -85,12 +87,6 @@
     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
     ];
-  };
-
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
   };
 
   # List packages installed in system profile. To search, run:

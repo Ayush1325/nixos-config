@@ -14,6 +14,8 @@
       # ./modules/home/joplin.nix
     ];
 
+  nixpkgs.config.allowUnfree = true;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "ayush";
@@ -50,6 +52,8 @@
     wget
     zellij
     nerdfonts
+    discord
+    slack
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -82,9 +86,7 @@
   #
   #  /etc/profiles/per-user/ayush/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
+  home.sessionVariables = { };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
