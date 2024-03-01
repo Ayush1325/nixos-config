@@ -11,7 +11,6 @@
       ./modules/home/rclone.nix
       ./modules/home/git.nix
       ./modules/home/mail.nix
-      # ./modules/home/joplin.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -54,6 +53,7 @@
     nerdfonts
     discord
     slack
+    joplin
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

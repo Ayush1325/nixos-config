@@ -19,10 +19,6 @@
 
   services.fwupd.enable = true;
 
-  # Firewall with nftables
-  networking.firewall.enable = true;
-  networking.nftables.enable = true;
-
   # Secrets
   sops = {
     defaultSopsFile = ./secrets/secrets.yaml;
@@ -52,6 +48,10 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+
+  # Firewall with nftables
+  networking.firewall.enable = true;
+  networking.nftables.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
