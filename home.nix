@@ -49,7 +49,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     wget
-    zellij
     nerdfonts
     discord
     slack

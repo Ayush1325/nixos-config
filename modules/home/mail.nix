@@ -1,18 +1,13 @@
 { config, ... }:
 
 {
-  # programs.thunderbird = {
-  #   enable = true;
-  #   profiles = {
-  #     "ayush" = {
-  #       isDefault = true;
-  #     };
-  #   };
-  # };
-
-  programs.aerc = {
+  programs.thunderbird = {
     enable = true;
-    extraConfig.general.unsafe-accounts-conf = true;
+    profiles = {
+      "ayush" = {
+        isDefault = true;
+      };
+    };
   };
 
   accounts.email.accounts = {
@@ -32,7 +27,7 @@
         tls.enable = true;
       };
       passwordCommand = "cat /run/secrets/mail/personal";
-      aerc.enable = true;
+      thunderbird.enable = true;
     };
     "Development" = {
       realName = "Ayush Singh";
@@ -49,7 +44,7 @@
         tls.enable = true;
       };
       passwordCommand = "cat /run/secrets/mail/devel";
-      aerc.enable = true;
+      thunderbird.enable = true;
     };
     "College" = {
       realName = "Ayush Singh";
@@ -66,7 +61,7 @@
         tls.enable = true;
       };
       passwordCommand = "cat /run/secrets/mail/college";
-      aerc.enable = true;
+      thunderbird.enable = true;
     };
   };
 }
