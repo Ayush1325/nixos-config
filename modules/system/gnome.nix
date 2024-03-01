@@ -10,6 +10,7 @@
     celluloid
     fragments
     gnomeExtensions.caffeine
+    pdfarranger
   ];
 
   environment.gnome.excludePackages = with pkgs; [
