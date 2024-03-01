@@ -23,6 +23,7 @@
   networking.firewall.enable = true;
   networking.nftables.enable = true;
 
+  # Secrets
   sops = {
     defaultSopsFile = ./secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
@@ -61,11 +62,6 @@
     defaultLocale = "en_IN.UTF-8";
     supportedLocales = [ "en_IN/UTF-8" ];
   };
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -106,21 +102,6 @@
 
   # GPG
   programs.gnupg.agent.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
