@@ -92,6 +92,7 @@
       nvim-web-devicons
     ];
     extraPackages = with pkgs; [
+      wl-clipboard
     ];
   };
 }
