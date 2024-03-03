@@ -19,5 +19,6 @@
     gnome.gnome-maps
     gnome.epiphany
     xterm
+    gnome.geary
   ];
 }

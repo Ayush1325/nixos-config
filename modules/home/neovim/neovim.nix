@@ -93,6 +93,9 @@
     ];
     extraPackages = with pkgs; [
       wl-clipboard
+      nixd
+      nixpkgs-fmt
+      nodejs
     ];
   };
 }

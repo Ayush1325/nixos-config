@@ -11,6 +11,7 @@
     inputs.home-manager.nixosModules.default
     ./modules/system/audio.nix
     ./modules/system/gnome.nix
+    # ./modules/system/cosmic.nix
     ./modules/system/steam.nix
     ./modules/system/graphics.nix
   ];
@@ -74,7 +75,7 @@
   # services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
@@ -91,6 +92,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    wget
   ];
 
   # Flakes

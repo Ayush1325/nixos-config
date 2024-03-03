@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.git = {
@@ -12,5 +12,6 @@
     extraConfig = {
       format.signoff = true;
     };
+    package = pkgs.gitFull;
   };
 }
